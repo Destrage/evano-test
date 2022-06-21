@@ -39,7 +39,7 @@ const installDependencies = async () => execSync("npm i --save-dev chai mocha su
 const setUpFolderStructure = async () => {
     let path = process.execPath.split('\\');
     path.pop();
-    const srcDir = `${(path.join('\\'))}\\node_modules\\ecli\\bin\\test`;
+    const srcDir = `${(path.join('\\'))}\\node_modules\\evano-test\\bin\\test`;
     const destDir = process.cwd() + '\\test';
 
 
