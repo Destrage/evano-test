@@ -7,9 +7,10 @@
 ```sh
 npm i -g evano-test
 ```
-### To generate
+### To generate the test structure and dependencies
 ```sh
 etcli g
 #or
 etcli generate
 ```
+The above command will install mocha, supertest and chai
