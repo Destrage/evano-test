@@ -1,14 +1,15 @@
 {
   "name": "evano-test",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "",
-  "main": "bin/index.js",
+  "main": "dist/index.js",
   "type": "module",
   "bin": {
     "etcli": "bin/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": ".\\node_modules\\.bin\\esbuild .\\bin\\index.js --bundle --outfile=.\\dist\\index.js --platform=node"
   },
   "keywords": [],
   "author": "Evan Victor Paul",
@@ -19,7 +20,6 @@
     "yargs": "^17.5.1"
   },
   "devDependencies": {
-    "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0"
+    "esbuild": "^0.14.47"
   }
 }

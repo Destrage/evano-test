@@ -25,7 +25,7 @@ const generate = async () => {
         }
     }
     else {
-        
+
         process.stdout.write("Setting up everything please wait...");
         await installDependencies();
         await setUpFolderStructure();
@@ -39,14 +39,14 @@ const installDependencies = async () => execSync("npm i --save-dev chai mocha su
 const setUpFolderStructure = async () => {
     let path = process.execPath.split('\\');
     path.pop();
-    const srcDir = `${(path.join('\\'))}\\node_modules\\evano-test\\bin\\test`;
+    path = `${(path.join('\\'))}\\node_modules\\evano-test\\dist\\test`;
+    let srcDir = fse.existsSync(path) ? path : process.env.APPDATA + '\\npm\\node_modules\\evano-test\\dist\\test';
+    console.log({ path, srcDir });
     const destDir = process.cwd() + '\\test';
-
 
     fse.copySync(srcDir, destDir, { overwrite: true }, (err) => {
         if (err) {
-            console.log({ err });
-            // process.stdout.write({ err });
+            process.stdout.write(err);
         } else {
             process.stdout.write("Done!");
         }
